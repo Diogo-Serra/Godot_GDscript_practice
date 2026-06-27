@@ -47,7 +47,7 @@ height = 14.0
 script = ExtResource("1_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1145068748]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=904605583]
 sprite_frames = SubResource("SpriteFrames_m6uwf")

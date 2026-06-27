@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cjuepalb75nn0"]
+
+[ext_resource type="Script" uid="uid://bo7pj1isx81de" path="res://scripts/slime.gd" id="1_n6pvg"]
+[ext_resource type="Texture2D" uid="uid://cip5fjj28nhm5" path="res://assets/sprites/slime_purple.png" id="1_p2gj0"]
+[ext_resource type="PackedScene" uid="uid://064jxexvy0n1" path="res://scenes/killzone.tscn" id="2_n6pvg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2npkn"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd6lc"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gstla"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5wyi"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l8pv"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnioy"]
+atlas = ExtResource("1_p2gj0")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flns0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjw23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2npkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd6lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gstla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5wyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l8pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnioy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m02gy"]
+radius = 4.0
+height = 10.0
+
+[node name="Slime" type="Node2D" unique_id=1198671128]
+script = ExtResource("1_n6pvg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=727334835]
+sprite_frames = SubResource("SpriteFrames_flns0")
+autoplay = "default"
+
+[node name="killzone" parent="." unique_id=2053111147 instance=ExtResource("2_n6pvg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=971950033]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_m02gy")
